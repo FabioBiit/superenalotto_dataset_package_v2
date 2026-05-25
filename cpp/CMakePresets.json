@@ -1,0 +1,43 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {"major": 3, "minor": 24, "patch": 0},
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      }
+    },
+    {
+      "name": "cpu",
+      "displayName": "CPU only (OpenMP)",
+      "inherits": "base",
+      "cacheVariables": {
+        "SE_BUILD_CUDA": "OFF",
+        "SE_USE_OPENMP": "ON"
+      }
+    },
+    {
+      "name": "cuda",
+      "displayName": "CUDA + OpenMP",
+      "inherits": "base",
+      "cacheVariables": {
+        "SE_BUILD_CUDA": "ON",
+        "SE_USE_OPENMP": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {"name": "cpu-release",  "configurePreset": "cpu",  "configuration": "Release"},
+    {"name": "cpu-debug",    "configurePreset": "cpu",  "configuration": "Debug"},
+    {"name": "cuda-release", "configurePreset": "cuda", "configuration": "Release"},
+    {"name": "cuda-debug",   "configurePreset": "cuda", "configuration": "Debug"}
+  ],
+  "testPresets": [
+    {"name": "cpu-tests",  "configurePreset": "cpu",  "configuration": "Release", "output": {"outputOnFailure": true}},
+    {"name": "cuda-tests", "configurePreset": "cuda", "configuration": "Release", "output": {"outputOnFailure": true}}
+  ]
+}

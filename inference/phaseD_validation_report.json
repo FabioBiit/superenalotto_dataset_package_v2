@@ -1,0 +1,142 @@
+{
+  "source_file": "superenalotto_2009-2026_extraction.csv",
+  "n_rows": 2855,
+  "schema": {
+    "missing": [],
+    "extra": [],
+    "n_rows": 2855,
+    "n_cols": 13
+  },
+  "dates": {
+    "n_nan_dates": 0,
+    "n_duplicate_dates": 0,
+    "monotonic_increasing": true,
+    "span_min": "2009-01-02",
+    "span_max": "2026-05-23"
+  },
+  "range_violations": {},
+  "draw_internal_consistency": {
+    "n_internal_duplicates_main": 0,
+    "sample_internal_duplicates": [],
+    "n_jolly_in_main": 0,
+    "sample_jolly_clash": []
+  },
+  "contest_numbers": {
+    "yearly_summary": {
+      "2009": {
+        "min": 1,
+        "max": 157,
+        "count": 157
+      },
+      "2010": {
+        "min": 1,
+        "max": 156,
+        "count": 156
+      },
+      "2011": {
+        "min": 1,
+        "max": 157,
+        "count": 157
+      },
+      "2012": {
+        "min": 1,
+        "max": 156,
+        "count": 156
+      },
+      "2013": {
+        "min": 1,
+        "max": 157,
+        "count": 157
+      },
+      "2014": {
+        "min": 1,
+        "max": 156,
+        "count": 156
+      },
+      "2015": {
+        "min": 1,
+        "max": 157,
+        "count": 157
+      },
+      "2016": {
+        "min": 1,
+        "max": 157,
+        "count": 157
+      },
+      "2017": {
+        "min": 1,
+        "max": 156,
+        "count": 156
+      },
+      "2018": {
+        "min": 1,
+        "max": 156,
+        "count": 156
+      },
+      "2019": {
+        "min": 1,
+        "max": 157,
+        "count": 157
+      },
+      "2020": {
+        "min": 1,
+        "max": 139,
+        "count": 139
+      },
+      "2021": {
+        "min": 1,
+        "max": 156,
+        "count": 156
+      },
+      "2022": {
+        "min": 1,
+        "max": 157,
+        "count": 157
+      },
+      "2023": {
+        "min": 1,
+        "max": 182,
+        "count": 182
+      },
+      "2024": {
+        "min": 1,
+        "max": 208,
+        "count": 208
+      },
+      "2025": {
+        "min": 1,
+        "max": 208,
+        "count": 208
+      },
+      "2026": {
+        "min": 1,
+        "max": 83,
+        "count": 83
+      }
+    },
+    "yearly_gaps": {}
+  },
+  "coverage_per_year": {
+    "2009": 157,
+    "2010": 156,
+    "2011": 157,
+    "2012": 156,
+    "2013": 157,
+    "2014": 156,
+    "2015": 157,
+    "2016": 157,
+    "2017": 156,
+    "2018": 156,
+    "2019": 157,
+    "2020": 139,
+    "2021": 156,
+    "2022": 157,
+    "2023": 182,
+    "2024": 208,
+    "2025": 208,
+    "2026": 83
+  },
+  "severity": [
+    "OK: no critical issues detected (structural validation only)"
+  ]
+}

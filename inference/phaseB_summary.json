@@ -1,0 +1,179 @@
+{
+  "n_extractions": 1133,
+  "date_min": "2020-01-02",
+  "date_max": "2026-05-23",
+  "regime_counts": {
+    "pre_Flutter": 387,
+    "Flutter": 145,
+    "4_week_post_2023_07_07": 601
+  },
+  "obs_stats_all": {
+    "chi2_freq": 76.81906443071492,
+    "sum_mean": 274.2930273609885,
+    "sum_std": 61.029059353224596,
+    "range_mean": 64.62842012356576,
+    "evens_mean": 2.9461606354810237,
+    "decades_mean": 4.64783759929391,
+    "consec_mean": 0.3292144748455428
+  },
+  "obs_stats_test": {
+    "chi2_freq": 79.73533424283765,
+    "sum_mean": 272.41473396998634,
+    "sum_std": 62.548163389077146,
+    "range_mean": 64.52796725784448,
+    "evens_mean": 2.9849931787175987,
+    "decades_mean": 4.620736698499318,
+    "consec_mean": 0.34379263301500684
+  },
+  "model_eval": [
+    {
+      "model": "G0_uniform",
+      "k_params": 0,
+      "log_likelihood": -16158.0338676421,
+      "AIC": 32316.0677352842,
+      "BIC": 32316.0677352842,
+      "brier_score": 0.06222222222222224,
+      "avg_hits_at_6": 0.42837653478854026,
+      "hits_std": 0.5949878970605749,
+      "hit_0": 456,
+      "hit_1": 243,
+      "hit_2": 31,
+      "hit_3": 3,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": 0.0
+    },
+    {
+      "model": "G4_structural",
+      "k_params": 14,
+      "log_likelihood": -16163.359755273208,
+      "AIC": 32354.719510546416,
+      "BIC": 32482.07688575745,
+      "brier_score": 0.062232126787019296,
+      "avg_hits_at_6": 0.4229195088676671,
+      "hits_std": 0.6168340505424668,
+      "hit_0": 468,
+      "hit_1": 225,
+      "hit_2": 35,
+      "hit_3": 5,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -1.2738853503184822
+    },
+    {
+      "model": "G2_dirichlet",
+      "k_params": 90,
+      "log_likelihood": -16199.064005551127,
+      "AIC": 32578.128011102253,
+      "BIC": 33396.85399460178,
+      "brier_score": 0.062298501503400806,
+      "avg_hits_at_6": 0.39290586630286495,
+      "hits_std": 0.5942460692894785,
+      "hit_0": 486,
+      "hit_1": 207,
+      "hit_2": 39,
+      "hit_3": 1,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -8.280254777070063
+    },
+    {
+      "model": "G3_markov_lag1",
+      "k_params": 180,
+      "log_likelihood": -16236.571821253026,
+      "AIC": 32833.14364250605,
+      "BIC": 34470.5956095051,
+      "brier_score": 0.062388860225636125,
+      "avg_hits_at_6": 0.3765347885402456,
+      "hits_std": 0.5746775575698757,
+      "hit_0": 492,
+      "hit_1": 206,
+      "hit_2": 35,
+      "hit_3": 0,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -12.101910828025474
+    },
+    {
+      "model": "G6_ensemble",
+      "k_params": 286,
+      "log_likelihood": -16189.60163668477,
+      "AIC": 32951.20327336954,
+      "BIC": 35552.93250982358,
+      "brier_score": 0.062282068527989905,
+      "avg_hits_at_6": 0.38335607094133695,
+      "hits_std": 0.5831618011412845,
+      "hit_0": 489,
+      "hit_1": 208,
+      "hit_2": 35,
+      "hit_3": 1,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -10.509554140127397
+    },
+    {
+      "model": "G5_regime_split",
+      "k_params": 270,
+      "log_likelihood": -16342.470817790254,
+      "AIC": 33224.94163558051,
+      "BIC": 35681.119586079076,
+      "brier_score": 0.06254298769618646,
+      "avg_hits_at_6": 0.373806275579809,
+      "hits_std": 0.5740845735013619,
+      "hit_0": 493,
+      "hit_1": 207,
+      "hit_2": 32,
+      "hit_3": 1,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -12.738853503184721
+    }
+  ],
+  "permutation_test": [
+    {
+      "model": "G4_structural",
+      "delta_hits_vs_G0": -0.0055,
+      "perm_p_value": 0.9028,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G2_dirichlet",
+      "delta_hits_vs_G0": -0.0355,
+      "perm_p_value": 0.2507,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G6_ensemble",
+      "delta_hits_vs_G0": -0.045,
+      "perm_p_value": 0.1447,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G3_markov_lag1",
+      "delta_hits_vs_G0": -0.0518,
+      "perm_p_value": 0.0927,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G5_regime_split",
+      "delta_hits_vs_G0": -0.0546,
+      "perm_p_value": 0.0865,
+      "robustly_beats_G0": false
+    }
+  ],
+  "verdict": {
+    "best_by_BIC": "G0_uniform",
+    "best_by_hits": "G0_uniform",
+    "G0_avg_hits": 0.4284,
+    "best_avg_hits": 0.4284,
+    "lift_best_pct": 0.0,
+    "robust_signal": false,
+    "interpretation": "Dati compatibili con uniforme. Nessun modello batte G0 in modo robusto. Le combinazioni generate restano euristiche (non previsioni)."
+  }
+}

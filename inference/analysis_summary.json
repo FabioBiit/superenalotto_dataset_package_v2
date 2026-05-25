@@ -1,0 +1,726 @@
+{
+  "n_extractions": 291,
+  "date_min": "2025-01-02",
+  "date_max": "2026-05-23",
+  "n_even_pct": 49.59908361970218,
+  "n_odd_pct": 50.40091638029782,
+  "decile_counts": {
+    "10-19": 204,
+    "70-79": 179,
+    "80-89": 196,
+    "20-29": 171,
+    "30-39": 193,
+    "40-49": 212,
+    "60-69": 191,
+    "0-9": 193,
+    "50-59": 185,
+    "90": 22
+  },
+  "fascia_counts": {
+    "Bassa (1-30)": 592,
+    "Alta (61-90)": 566,
+    "Media (31-60)": 588
+  },
+  "chi2_stat": 82.24742268041237,
+  "chi2_crit_05": 112.022,
+  "chi2_crit_01": 122.942,
+  "entropy_bits": 6.456406284998258,
+  "entropy_max": 6.491853096329675,
+  "entropy_eff_pct": 99.4539800761749,
+  "mc_p_value": 0.5404,
+  "mc_mean": 83.85338144329899,
+  "mc_std": 12.529055760603494,
+  "mc_p95": 105.44845360824745,
+  "n_pair_expected": 1.0898876404494382,
+  "n_triple_expected": 0.04954034729315628,
+  "top10_freq": [
+    {
+      "numero": 31,
+      "frequenza": 28,
+      "pct": 1.6036655211912942,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 40,
+      "frequenza": 27,
+      "pct": 1.5463917525773196,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 63,
+      "frequenza": 27,
+      "pct": 1.5463917525773196,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 49,
+      "frequenza": 26,
+      "pct": 1.4891179839633446,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 18,
+      "frequenza": 26,
+      "pct": 1.4891179839633446,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 85,
+      "frequenza": 26,
+      "pct": 1.4891179839633446,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 10,
+      "frequenza": 25,
+      "pct": 1.43184421534937,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 5,
+      "frequenza": 25,
+      "pct": 1.43184421534937,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 11,
+      "frequenza": 25,
+      "pct": 1.43184421534937,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 8,
+      "frequenza": 25,
+      "pct": 1.43184421534937,
+      "pct_atteso": 1.1111111111111112
+    }
+  ],
+  "bottom10_freq": [
+    {
+      "numero": 50,
+      "frequenza": 8,
+      "pct": 0.45819014891179843,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 70,
+      "frequenza": 9,
+      "pct": 0.5154639175257731,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 67,
+      "frequenza": 11,
+      "pct": 0.6300114547537228,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 26,
+      "frequenza": 12,
+      "pct": 0.6872852233676976,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 53,
+      "frequenza": 13,
+      "pct": 0.7445589919816723,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 13,
+      "frequenza": 13,
+      "pct": 0.7445589919816723,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 22,
+      "frequenza": 13,
+      "pct": 0.7445589919816723,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 89,
+      "frequenza": 13,
+      "pct": 0.7445589919816723,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 78,
+      "frequenza": 14,
+      "pct": 0.8018327605956471,
+      "pct_atteso": 1.1111111111111112
+    },
+    {
+      "numero": 27,
+      "frequenza": 14,
+      "pct": 0.8018327605956471,
+      "pct_atteso": 1.1111111111111112
+    }
+  ],
+  "top_ritardatari": [
+    {
+      "numero": 70,
+      "ritardo_attuale": 99,
+      "ritardo_medio": 22.625,
+      "ritardo_max_storico": 39,
+      "freq": 9,
+      "rapporto_rit": 4.375690607734807
+    },
+    {
+      "numero": 75,
+      "ritardo_attuale": 61,
+      "ritardo_medio": 14.8,
+      "ritardo_max_storico": 53,
+      "freq": 16,
+      "rapporto_rit": 4.121621621621621
+    },
+    {
+      "numero": 76,
+      "ritardo_attuale": 54,
+      "ritardo_medio": 15.857142857142858,
+      "ritardo_max_storico": 45,
+      "freq": 15,
+      "rapporto_rit": 3.4054054054054053
+    },
+    {
+      "numero": 78,
+      "ritardo_attuale": 46,
+      "ritardo_medio": 11.615384615384615,
+      "ritardo_max_storico": 34,
+      "freq": 14,
+      "rapporto_rit": 3.960264900662252
+    },
+    {
+      "numero": 23,
+      "ritardo_attuale": 46,
+      "ritardo_medio": 16.285714285714285,
+      "ritardo_max_storico": 47,
+      "freq": 15,
+      "rapporto_rit": 2.8245614035087723
+    },
+    {
+      "numero": 4,
+      "ritardo_attuale": 45,
+      "ritardo_medio": 15.866666666666667,
+      "ritardo_max_storico": 63,
+      "freq": 16,
+      "rapporto_rit": 2.8361344537815123
+    },
+    {
+      "numero": 88,
+      "ritardo_attuale": 40,
+      "ritardo_medio": 10.869565217391305,
+      "ritardo_max_storico": 39,
+      "freq": 24,
+      "rapporto_rit": 3.6799999999999997
+    },
+    {
+      "numero": 26,
+      "ritardo_attuale": 34,
+      "ritardo_medio": 21.636363636363637,
+      "ritardo_max_storico": 56,
+      "freq": 12,
+      "rapporto_rit": 1.5714285714285714
+    },
+    {
+      "numero": 80,
+      "ritardo_attuale": 34,
+      "ritardo_medio": 10.608695652173912,
+      "ritardo_max_storico": 31,
+      "freq": 24,
+      "rapporto_rit": 3.2049180327868854
+    },
+    {
+      "numero": 67,
+      "ritardo_attuale": 32,
+      "ritardo_medio": 19.3,
+      "ritardo_max_storico": 39,
+      "freq": 11,
+      "rapporto_rit": 1.6580310880829014
+    },
+    {
+      "numero": 39,
+      "ritardo_attuale": 31,
+      "ritardo_medio": 15.733333333333333,
+      "ritardo_max_storico": 55,
+      "freq": 16,
+      "rapporto_rit": 1.9703389830508475
+    },
+    {
+      "numero": 25,
+      "ritardo_attuale": 30,
+      "ritardo_medio": 14.166666666666666,
+      "ritardo_max_storico": 48,
+      "freq": 19,
+      "rapporto_rit": 2.1176470588235294
+    },
+    {
+      "numero": 32,
+      "ritardo_attuale": 30,
+      "ritardo_medio": 15.117647058823529,
+      "ritardo_max_storico": 32,
+      "freq": 18,
+      "rapporto_rit": 1.9844357976653697
+    },
+    {
+      "numero": 36,
+      "ritardo_attuale": 30,
+      "ritardo_medio": 16.0,
+      "ritardo_max_storico": 54,
+      "freq": 15,
+      "rapporto_rit": 1.875
+    },
+    {
+      "numero": 21,
+      "ritardo_attuale": 28,
+      "ritardo_medio": 15.411764705882353,
+      "ritardo_max_storico": 62,
+      "freq": 18,
+      "rapporto_rit": 1.816793893129771
+    }
+  ],
+  "hot_numbers": [
+    {
+      "numero": 59,
+      "ritardo_attuale": 0,
+      "ritardo_medio": 15.666666666666666,
+      "ritardo_max_storico": 71,
+      "freq": 19,
+      "rapporto_rit": 0.0
+    },
+    {
+      "numero": 69,
+      "ritardo_attuale": 0,
+      "ritardo_medio": 15.666666666666666,
+      "ritardo_max_storico": 50,
+      "freq": 19,
+      "rapporto_rit": 0.0
+    },
+    {
+      "numero": 29,
+      "ritardo_attuale": 0,
+      "ritardo_medio": 13.80952380952381,
+      "ritardo_max_storico": 82,
+      "freq": 22,
+      "rapporto_rit": 0.0
+    },
+    {
+      "numero": 57,
+      "ritardo_attuale": 0,
+      "ritardo_medio": 15.833333333333334,
+      "ritardo_max_storico": 88,
+      "freq": 19,
+      "rapporto_rit": 0.0
+    },
+    {
+      "numero": 34,
+      "ritardo_attuale": 0,
+      "ritardo_medio": 18.533333333333335,
+      "ritardo_max_storico": 61,
+      "freq": 16,
+      "rapporto_rit": 0.0
+    },
+    {
+      "numero": 14,
+      "ritardo_attuale": 0,
+      "ritardo_medio": 17.3125,
+      "ritardo_max_storico": 51,
+      "freq": 17,
+      "rapporto_rit": 0.0
+    },
+    {
+      "numero": 83,
+      "ritardo_attuale": 1,
+      "ritardo_medio": 12.478260869565217,
+      "ritardo_max_storico": 43,
+      "freq": 24,
+      "rapporto_rit": 0.08013937282229966
+    },
+    {
+      "numero": 17,
+      "ritardo_attuale": 1,
+      "ritardo_medio": 13.428571428571429,
+      "ritardo_max_storico": 42,
+      "freq": 22,
+      "rapporto_rit": 0.07446808510638298
+    },
+    {
+      "numero": 5,
+      "ritardo_attuale": 1,
+      "ritardo_medio": 11.791666666666666,
+      "ritardo_max_storico": 34,
+      "freq": 25,
+      "rapporto_rit": 0.08480565371024736
+    },
+    {
+      "numero": 65,
+      "ritardo_attuale": 1,
+      "ritardo_medio": 16.11764705882353,
+      "ritardo_max_storico": 71,
+      "freq": 18,
+      "rapporto_rit": 0.06204379562043796
+    },
+    {
+      "numero": 87,
+      "ritardo_attuale": 1,
+      "ritardo_medio": 20.428571428571427,
+      "ritardo_max_storico": 65,
+      "freq": 15,
+      "rapporto_rit": 0.04895104895104895
+    },
+    {
+      "numero": 71,
+      "ritardo_attuale": 1,
+      "ritardo_medio": 15.0,
+      "ritardo_max_storico": 48,
+      "freq": 20,
+      "rapporto_rit": 0.06666666666666667
+    },
+    {
+      "numero": 58,
+      "ritardo_attuale": 2,
+      "ritardo_medio": 11.541666666666666,
+      "ritardo_max_storico": 40,
+      "freq": 25,
+      "rapporto_rit": 0.1732851985559567
+    },
+    {
+      "numero": 38,
+      "ritardo_attuale": 2,
+      "ritardo_medio": 16.470588235294116,
+      "ritardo_max_storico": 58,
+      "freq": 18,
+      "rapporto_rit": 0.12142857142857144
+    },
+    {
+      "numero": 1,
+      "ritardo_attuale": 2,
+      "ritardo_medio": 13.142857142857142,
+      "ritardo_max_storico": 33,
+      "freq": 22,
+      "rapporto_rit": 0.15217391304347827
+    }
+  ],
+  "top_pairs": [
+    [
+      [
+        18,
+        40
+      ],
+      6
+    ],
+    [
+      [
+        19,
+        88
+      ],
+      5
+    ],
+    [
+      [
+        30,
+        43
+      ],
+      5
+    ],
+    [
+      [
+        49,
+        57
+      ],
+      5
+    ],
+    [
+      [
+        31,
+        72
+      ],
+      5
+    ],
+    [
+      [
+        7,
+        69
+      ],
+      5
+    ],
+    [
+      [
+        7,
+        80
+      ],
+      5
+    ],
+    [
+      [
+        41,
+        83
+      ],
+      5
+    ],
+    [
+      [
+        29,
+        47
+      ],
+      5
+    ],
+    [
+      [
+        7,
+        58
+      ],
+      5
+    ]
+  ],
+  "top_triples": [
+    [
+      [
+        11,
+        19,
+        88
+      ],
+      3
+    ],
+    [
+      [
+        19,
+        21,
+        74
+      ],
+      2
+    ],
+    [
+      [
+        29,
+        74,
+        88
+      ],
+      2
+    ],
+    [
+      [
+        19,
+        49,
+        72
+      ],
+      2
+    ],
+    [
+      [
+        5,
+        11,
+        35
+      ],
+      2
+    ],
+    [
+      [
+        5,
+        11,
+        85
+      ],
+      2
+    ],
+    [
+      [
+        5,
+        35,
+        85
+      ],
+      2
+    ],
+    [
+      [
+        11,
+        35,
+        85
+      ],
+      2
+    ],
+    [
+      [
+        21,
+        29,
+        46
+      ],
+      2
+    ],
+    [
+      [
+        1,
+        34,
+        69
+      ],
+      2
+    ]
+  ],
+  "scaldati": [
+    [
+      57,
+      2.1525391370752196
+    ],
+    [
+      58,
+      1.8088965253913705
+    ],
+    [
+      28,
+      1.5750286368843067
+    ],
+    [
+      64,
+      1.2838869797632686
+    ],
+    [
+      47,
+      1.169339442535319
+    ],
+    [
+      13,
+      1.1072928598701792
+    ],
+    [
+      60,
+      1.0547919053073693
+    ],
+    [
+      27,
+      1.0500190912562046
+    ],
+    [
+      84,
+      1.0500190912562046
+    ],
+    [
+      87,
+      0.9927453226422296
+    ]
+  ],
+  "raffreddati": [
+    [
+      88,
+      -1.3745704467353952
+    ],
+    [
+      49,
+      -1.0261550210003816
+    ],
+    [
+      4,
+      -0.9163802978235969
+    ],
+    [
+      75,
+      -0.9163802978235969
+    ],
+    [
+      80,
+      -0.9116074837724323
+    ],
+    [
+      83,
+      -0.9116074837724323
+    ],
+    [
+      23,
+      -0.859106529209622
+    ],
+    [
+      76,
+      -0.859106529209622
+    ],
+    [
+      78,
+      -0.8018327605956471
+    ],
+    [
+      20,
+      -0.739786177930508
+    ]
+  ],
+  "jolly_top": [
+    [
+      64,
+      7
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      34,
+      6
+    ],
+    [
+      89,
+      6
+    ],
+    [
+      58,
+      6
+    ],
+    [
+      26,
+      6
+    ],
+    [
+      36,
+      6
+    ],
+    [
+      80,
+      6
+    ],
+    [
+      37,
+      5
+    ],
+    [
+      23,
+      5
+    ]
+  ],
+  "ss_top": [
+    [
+      52,
+      9
+    ],
+    [
+      80,
+      8
+    ],
+    [
+      53,
+      7
+    ],
+    [
+      45,
+      7
+    ],
+    [
+      73,
+      6
+    ],
+    [
+      39,
+      6
+    ],
+    [
+      36,
+      6
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      54,
+      6
+    ],
+    [
+      15,
+      5
+    ]
+  ]
+}

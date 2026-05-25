@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "Bash(python -c \"import pandas, numpy, scipy; print\\('OK'\\)\")",
+      "Bash(python -c \"import pandas; print\\(pandas.__version__\\)\")",
+      "Bash(python -c \"import numpy; print\\(numpy.__version__\\)\")",
+      "Bash(rtk pip *)",
+      "Bash(python analysis.py)",
+      "Bash(rtk wc *)",
+      "Bash(python analysis_55.py)",
+      "Bash(python *)",
+      "WebSearch",
+      "WebFetch(domain:www.superenalotto.it)",
+      "WebFetch(domain:www.superenalotto.com)",
+      "WebFetch(domain:www.adm.gov.it)",
+      "WebFetch(domain:www.sisal.com)",
+      "WebFetch(domain:arxiv.org)",
+      "Bash(PYTHONIOENCODING=utf-8 python utils.py/generator_hierarchy.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python utils.py/phaseC_combinations.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python utils.py/phaseD_validator.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python utils.py/phaseB_extended.py)",
+      "Bash(\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/Installer/vswhere.exe\" -latest -products '*' -requires Microsoft.VisualCpp.Tools.HostX64.TargetX64 -property installationPath -property displayName)"
+    ]
+  }
+}

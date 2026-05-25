@@ -1,0 +1,18 @@
+{
+  "name": "superenalotto-engine",
+  "version-string": "0.1.0",
+  "description": "Reverse engineering engine for SuperEnalotto draws",
+  "dependencies": [
+    "eigen3",
+    "pybind11",
+    {
+      "name": "catch2",
+      "version>=": "3.5.0"
+    }
+  ],
+  "features": {
+    "cuda": {
+      "description": "CUDA acceleration (requires CUDA Toolkit installed system-wide)"
+    }
+  }
+}

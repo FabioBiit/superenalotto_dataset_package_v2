@@ -1,0 +1,6 @@
+model,delta_hits_vs_G0,perm_p_value,robustly_beats_G0
+G4_structural,-0.0055,0.9028,False
+G2_dirichlet,-0.0355,0.2507,False
+G6_ensemble,-0.045,0.1447,False
+G3_markov_lag1,-0.0518,0.0927,False
+G5_regime_split,-0.0546,0.0865,False

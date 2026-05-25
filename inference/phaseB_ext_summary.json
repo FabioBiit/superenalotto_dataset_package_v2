@@ -1,0 +1,180 @@
+{
+  "n_extractions": 2855,
+  "date_min": "2009-01-02",
+  "date_max": "2026-05-23",
+  "initial_train": 800,
+  "regime_counts": {
+    "pre_Flutter": 2109,
+    "Flutter": 145,
+    "4_week_post_2023_07_07": 601
+  },
+  "obs_stats_all": {
+    "chi2_freq": 89.04378283712785,
+    "sum_mean": 275.2742556917688,
+    "sum_std": 61.07159319068733,
+    "range_mean": 64.8493870402802,
+    "evens_mean": 2.961120840630473,
+    "decades_mean": 4.6595446584938705,
+    "consec_mean": 0.32714535901926445
+  },
+  "obs_stats_test": {
+    "chi2_freq": 84.91970802919707,
+    "sum_mean": 275.09099756690995,
+    "sum_std": 61.251585146398185,
+    "range_mean": 64.78880778588808,
+    "evens_mean": 2.976155717761557,
+    "decades_mean": 4.652554744525547,
+    "consec_mean": 0.32652068126520684
+  },
+  "model_eval": [
+    {
+      "model": "G0_uniform",
+      "k_params": 0,
+      "log_likelihood": -45299.80845566783,
+      "AIC": 90599.61691133566,
+      "BIC": 90599.61691133566,
+      "brier_score": 0.062222222222222234,
+      "avg_hits_at_6": 0.3844282238442822,
+      "hits_std": 0.5762120213167927,
+      "hit_0": 1358,
+      "hit_1": 609,
+      "hit_2": 83,
+      "hit_3": 5,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": 0.0
+    },
+    {
+      "model": "G4_structural",
+      "k_params": 14,
+      "log_likelihood": -45302.64740413474,
+      "AIC": 90633.29480826948,
+      "BIC": 90775.08457943113,
+      "brier_score": 0.06222411458804045,
+      "avg_hits_at_6": 0.41021897810218977,
+      "hits_std": 0.6078102379706384,
+      "hit_0": 1332,
+      "hit_1": 614,
+      "hit_2": 98,
+      "hit_3": 11,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": 6.708860759493684
+    },
+    {
+      "model": "G2_dirichlet",
+      "k_params": 90,
+      "log_likelihood": -45364.708114903544,
+      "AIC": 90909.41622980709,
+      "BIC": 91820.92190156055,
+      "brier_score": 0.06226569976012604,
+      "avg_hits_at_6": 0.3795620437956204,
+      "hits_std": 0.577746947796594,
+      "hit_0": 1373,
+      "hit_1": 587,
+      "hit_2": 92,
+      "hit_3": 3,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -1.2658227848101222
+    },
+    {
+      "model": "G3_markov_lag1",
+      "k_params": 180,
+      "log_likelihood": -45417.02357198751,
+      "AIC": 91194.04714397503,
+      "BIC": 93017.05848748193,
+      "brier_score": 0.062301606275615394,
+      "avg_hits_at_6": 0.3907542579075426,
+      "hits_std": 0.5989546168462857,
+      "hit_0": 1368,
+      "hit_1": 579,
+      "hit_2": 100,
+      "hit_3": 8,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": 1.6455696202531733
+    },
+    {
+      "model": "G6_ensemble",
+      "k_params": 286,
+      "log_likelihood": -45348.33895037715,
+      "AIC": 91268.6779007543,
+      "BIC": 94165.24036877083,
+      "brier_score": 0.06225500615322033,
+      "avg_hits_at_6": 0.37518248175182484,
+      "hits_std": 0.5851920917260062,
+      "hit_0": 1387,
+      "hit_1": 573,
+      "hit_2": 87,
+      "hit_3": 8,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -2.405063291139231
+    },
+    {
+      "model": "G5_regime_split",
+      "k_params": 270,
+      "log_likelihood": -45525.89714729059,
+      "AIC": 91591.79429458118,
+      "BIC": 94326.31130984155,
+      "brier_score": 0.06236473582415902,
+      "avg_hits_at_6": 0.3722627737226277,
+      "hits_std": 0.5727888738156515,
+      "hit_0": 1384,
+      "hit_1": 580,
+      "hit_2": 88,
+      "hit_3": 3,
+      "hit_4": 0,
+      "hit_5": 0,
+      "hit_6": 0,
+      "lift_vs_uniform_pct": -3.164556962025311
+    }
+  ],
+  "permutation_test": [
+    {
+      "model": "G4_structural",
+      "delta_hits_vs_G0": 0.0258,
+      "perm_p_value": 0.197,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G3_markov_lag1",
+      "delta_hits_vs_G0": 0.0063,
+      "perm_p_value": 0.7355,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G2_dirichlet",
+      "delta_hits_vs_G0": -0.0049,
+      "perm_p_value": 0.7995,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G6_ensemble",
+      "delta_hits_vs_G0": -0.0092,
+      "perm_p_value": 0.6188,
+      "robustly_beats_G0": false
+    },
+    {
+      "model": "G5_regime_split",
+      "delta_hits_vs_G0": -0.0122,
+      "perm_p_value": 0.4953,
+      "robustly_beats_G0": false
+    }
+  ],
+  "verdict": {
+    "best_by_BIC": "G0_uniform",
+    "best_by_hits": "G4_structural",
+    "G0_avg_hits": 0.3844,
+    "best_avg_hits": 0.4102,
+    "lift_best_pct": 6.709,
+    "robust_signal": false,
+    "interpretation": "Dati compatibili con uniforme. Nessun modello batte G0 in modo robusto. Le combinazioni generate restano euristiche (non previsioni)."
+  }
+}
