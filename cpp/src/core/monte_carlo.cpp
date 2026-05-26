@@ -12,6 +12,15 @@
 
 namespace se::core {
 
+#ifdef SE_HAS_CUDA
+namespace cuda {
+Eigen::VectorXd simulate_uniform_frequency_cuda(int n_draws, std::uint64_t seed);
+Eigen::VectorXd simulate_weighted_frequency_cuda(const double* weights_host,
+                                                  int n_draws, std::uint64_t seed);
+}
+#endif
+
+
 namespace {
 
 void sample_six_without_replacement_uniform(PRNG& prng, std::array<int, N_MAIN>& out) {
@@ -60,6 +69,12 @@ void sample_six_weighted_no_replacement(PRNG& prng,
 Eigen::VectorXd simulate_uniform_frequency(int n_draws, const MCConfig& cfg) {
     if (n_draws <= 0) throw std::invalid_argument("n_draws must be > 0");
 
+#ifdef SE_HAS_CUDA
+    if (cfg.use_cuda) {
+        return cuda::simulate_uniform_frequency_cuda(n_draws, cfg.seed);
+    }
+#endif
+
     Eigen::VectorXd freq = Eigen::VectorXd::Zero(N_MAX);
 
 #ifdef SE_HAS_OPENMP
@@ -99,6 +114,12 @@ Eigen::VectorXd simulate_weighted_frequency(std::span<const double> weights,
     if (weights.size() != static_cast<std::size_t>(N_MAX))
         throw std::invalid_argument("weights must have length 90");
     if (n_draws <= 0) throw std::invalid_argument("n_draws must be > 0");
+
+#ifdef SE_HAS_CUDA
+    if (cfg.use_cuda) {
+        return cuda::simulate_weighted_frequency_cuda(weights.data(), n_draws, cfg.seed);
+    }
+#endif
 
     Eigen::VectorXd freq = Eigen::VectorXd::Zero(N_MAX);
 

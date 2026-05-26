@@ -22,6 +22,8 @@
 #include "generation/combination_generator.hpp"
 #include "generation/mmr_selector.hpp"
 
+#include "backtesting/walk_forward.hpp"
+
 #include <string>
 #include <vector>
 
@@ -274,4 +276,55 @@ PYBIND11_MODULE(se_engine, m) {
 
     m.def("strategy_name", &se::generation::strategy_name);
     m.def("jaccard_distance", &se::generation::jaccard_distance);
+
+    // ---------- backtesting::walk_forward ----------
+    py::class_<se::backtesting::WalkForwardConfig>(m, "WalkForwardConfig")
+        .def(py::init<>())
+        .def_readwrite("initial_train", &se::backtesting::WalkForwardConfig::initial_train)
+        .def_readwrite("refit_every",   &se::backtesting::WalkForwardConfig::refit_every);
+
+    py::class_<se::backtesting::ModelResult>(m, "ModelResult")
+        .def_readonly("name",                &se::backtesting::ModelResult::name)
+        .def_readonly("k_params",            &se::backtesting::ModelResult::k_params)
+        .def_readonly("n_test",              &se::backtesting::ModelResult::n_test)
+        .def_readonly("log_likelihood",      &se::backtesting::ModelResult::log_likelihood)
+        .def_readonly("aic",                 &se::backtesting::ModelResult::aic)
+        .def_readonly("bic",                 &se::backtesting::ModelResult::bic)
+        .def_readonly("brier_score",         &se::backtesting::ModelResult::brier_score)
+        .def_readonly("avg_hits_at_6",       &se::backtesting::ModelResult::avg_hits_at_6)
+        .def_readonly("hits_std",            &se::backtesting::ModelResult::hits_std)
+        .def_readonly("hits_distribution",   &se::backtesting::ModelResult::hits_distribution)
+        .def_readonly("per_draw_hits",       &se::backtesting::ModelResult::per_draw_hits)
+        .def_readonly("lift_vs_uniform_pct", &se::backtesting::ModelResult::lift_vs_uniform_pct);
+
+    py::class_<se::backtesting::PermResult>(m, "PermResult")
+        .def_readonly("delta_hits_vs_G0",    &se::backtesting::PermResult::delta_hits_vs_G0)
+        .def_readonly("p_value",             &se::backtesting::PermResult::p_value)
+        .def_readonly("robustly_beats_G0",   &se::backtesting::PermResult::robustly_beats_G0);
+
+    py::class_<se::backtesting::WalkForward::FullReport>(m, "FullReport")
+        .def_readonly("models",              &se::backtesting::WalkForward::FullReport::models)
+        .def_readonly("permutation_tests",   &se::backtesting::WalkForward::FullReport::permutation_tests)
+        .def_readonly("verdict",             &se::backtesting::WalkForward::FullReport::verdict)
+        .def_readonly("robust_signal",       &se::backtesting::WalkForward::FullReport::robust_signal);
+
+    py::class_<se::backtesting::WalkForward>(m, "WalkForward")
+        .def(py::init<se::backtesting::WalkForwardConfig>(),
+             py::arg("cfg") = se::backtesting::WalkForwardConfig{})
+        .def_static("build_indicator", &se::backtesting::WalkForward::build_indicator)
+        .def_static("build_regimes",   &se::backtesting::WalkForward::build_regimes)
+        .def("qmat_G0", &se::backtesting::WalkForward::qmat_G0)
+        .def("qmat_G2", &se::backtesting::WalkForward::qmat_G2, py::arg("draws"), py::arg("alpha") = 1.0)
+        .def("qmat_G3", &se::backtesting::WalkForward::qmat_G3, py::arg("draws"),
+             py::arg("lag") = 1, py::arg("alpha") = 1.0)
+        .def("qmat_G4", &se::backtesting::WalkForward::qmat_G4)
+        .def("qmat_G5", &se::backtesting::WalkForward::qmat_G5, py::arg("draws"), py::arg("alpha") = 1.0)
+        .def("qmat_G6", &se::backtesting::WalkForward::qmat_G6,
+             py::arg("g2"), py::arg("g3"), py::arg("g4"),
+             py::arg("w") = std::array<double, 3>{0.5, 0.3, 0.2})
+        .def("evaluate", &se::backtesting::WalkForward::evaluate)
+        .def("paired_permutation_test", &se::backtesting::WalkForward::paired_permutation_test,
+             py::arg("hits_a"), py::arg("hits_b"),
+             py::arg("n_iter") = 4000, py::arg("seed") = 7)
+        .def("run_all", &se::backtesting::WalkForward::run_all);
 }

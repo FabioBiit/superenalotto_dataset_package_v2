@@ -1,13 +1,15 @@
-file(GLOB_RECURSE SE_CORE_SRC       core/*.cpp)
-file(GLOB_RECURSE SE_MODELS_SRC     models/*.cpp)
-file(GLOB_RECURSE SE_INFERENCE_SRC  inference/*.cpp)
-file(GLOB_RECURSE SE_GENERATION_SRC generation/*.cpp)
+file(GLOB_RECURSE SE_CORE_SRC        core/*.cpp)
+file(GLOB_RECURSE SE_MODELS_SRC      models/*.cpp)
+file(GLOB_RECURSE SE_INFERENCE_SRC   inference/*.cpp)
+file(GLOB_RECURSE SE_GENERATION_SRC  generation/*.cpp)
+file(GLOB_RECURSE SE_BACKTESTING_SRC backtesting/*.cpp)
 
 add_library(se_engine STATIC
     ${SE_CORE_SRC}
     ${SE_MODELS_SRC}
     ${SE_INFERENCE_SRC}
     ${SE_GENERATION_SRC}
+    ${SE_BACKTESTING_SRC}
 )
 
 target_include_directories(se_engine PUBLIC

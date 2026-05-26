@@ -5,6 +5,7 @@ add_executable(se_tests
     test_model_selection.cpp
     test_monte_carlo.cpp
     test_generation.cpp
+    test_backtesting.cpp
 )
 
 target_link_libraries(se_tests PRIVATE

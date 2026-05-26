@@ -20,7 +20,10 @@
       "Bash(PYTHONIOENCODING=utf-8 python utils.py/phaseC_combinations.py)",
       "Bash(PYTHONIOENCODING=utf-8 python utils.py/phaseD_validator.py)",
       "Bash(PYTHONIOENCODING=utf-8 python utils.py/phaseB_extended.py)",
-      "Bash(\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/Installer/vswhere.exe\" -latest -products '*' -requires Microsoft.VisualCpp.Tools.HostX64.TargetX64 -property installationPath -property displayName)"
+      "Bash(\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/Installer/vswhere.exe\" -latest -products '*' -requires Microsoft.VisualCpp.Tools.HostX64.TargetX64 -property installationPath -property displayName)",
+      "Bash(rtk read *)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(Tee-Object *)"
     ]
   }
 }

@@ -4,6 +4,7 @@
 #include "models/prng_fingerprint.hpp"
 #include "generation/combination_generator.hpp"
 #include "generation/mmr_selector.hpp"
+#include "backtesting/walk_forward.hpp"
 
 #include <algorithm>
 #include <cstdlib>
@@ -37,7 +38,8 @@ void print_usage() {
               << "  se_cli --validate    <csv_path>\n"
               << "  se_cli --frequency   <csv_path>\n"
               << "  se_cli --fingerprint <csv_path>\n"
-              << "  se_cli --generate    <csv_path> [k_final=25]\n";
+              << "  se_cli --generate    <csv_path> [k_final=25]\n"
+              << "  se_cli --backtest    <csv_path> [initial_train=800]\n";
 }
 
 int cmd_validate(const std::filesystem::path& path) {
@@ -142,6 +144,51 @@ int cmd_generate(const std::filesystem::path& path, int k_final) {
     return 0;
 }
 
+int cmd_backtest(const std::filesystem::path& path, int initial_train) {
+    auto draws = se::core::DataLoader::load_csv(path);
+    std::cout << "Loaded " << draws.size() << " draws\n";
+    if (initial_train >= static_cast<int>(draws.size()))
+        throw std::runtime_error("initial_train must be < n_draws");
+
+    se::backtesting::WalkForwardConfig cfg;
+    cfg.initial_train = initial_train;
+    cfg.refit_every   = 100;
+    se::backtesting::WalkForward wf(cfg);
+
+    std::cout << "Running walk-forward G0..G6 (initial_train=" << initial_train << ")...\n";
+    auto rep = wf.run_all(draws);
+
+    std::cout << "\n"
+              << std::left << std::setw(22) << "Model"
+              << std::setw(8)  << "k"
+              << std::setw(14) << "log_lik"
+              << std::setw(14) << "AIC"
+              << std::setw(14) << "BIC"
+              << std::setw(12) << "avg_hits"
+              << std::setw(10) << "lift_%"
+              << "\n";
+    for (const auto& m : rep.models) {
+        std::cout << std::left << std::setw(22) << m.name
+                  << std::setw(8)  << m.k_params
+                  << std::setw(14) << std::fixed << std::setprecision(2) << m.log_likelihood
+                  << std::setw(14) << m.aic
+                  << std::setw(14) << m.bic
+                  << std::setw(12) << std::setprecision(4) << m.avg_hits_at_6
+                  << std::setw(10) << std::setprecision(2) << m.lift_vs_uniform_pct
+                  << "\n";
+    }
+    std::cout << "\nPermutation test vs G0:\n";
+    for (const auto& [name, pr] : rep.permutation_tests) {
+        std::cout << "  " << std::left << std::setw(22) << name
+                  << "delta=" << std::setw(8) << std::setprecision(4) << pr.delta_hits_vs_G0
+                  << "p=" << std::setw(8) << std::setprecision(4) << pr.p_value
+                  << (pr.robustly_beats_G0 ? " ROBUST" : "")
+                  << "\n";
+    }
+    std::cout << "\nVerdict: " << rep.verdict << "\n";
+    return 0;
+}
+
 }  // namespace
 
 int main(int argc, char** argv) {
@@ -155,6 +202,10 @@ int main(int argc, char** argv) {
         if (cmd == "--generate"    && argc >= 3) {
             const int k = (argc >= 4) ? std::atoi(argv[3]) : 25;
             return cmd_generate(argv[2], k);
+        }
+        if (cmd == "--backtest"    && argc >= 3) {
+            const int it = (argc >= 4) ? std::atoi(argv[3]) : 800;
+            return cmd_backtest(argv[2], it);
         }
         print_usage();
         return EXIT_FAILURE;

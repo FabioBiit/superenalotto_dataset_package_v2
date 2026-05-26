@@ -1,11 +1,51 @@
+# Build directories
 build/
 out/
-*.user
+bin/
+obj/
+dist/
+cmake-build-*/
+
+# IDE / editor
 .vs/
 .vscode/
 .idea/
+*.user
 CMakeUserPresets.json
+
+# vcpkg
 vcpkg_installed/
-*.pyd
-*.so
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# CodeReviewGraph local index/cache
+.code-review-graph/
+.crg/
+*.sqlite
+*.sqlite3
+*.db
+
+# Compiled binaries / libraries
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+*.lib
+*.a
+
+# Logs / temporary files
+logs/
+tmp/
+*.log

@@ -1,0 +1,21 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+.vs/
+
+# CodeReviewGraph
+.code-review-graph/
+.crg/
+*.sqlite
+*.sqlite3
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
