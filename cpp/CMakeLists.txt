@@ -31,10 +31,12 @@ endif()
 # ---------- Compiler warnings & optimization ----------
 if(MSVC)
     add_compile_options(/W3 /permissive- /Zc:__cplusplus /MP)
-    add_compile_options($<$<CONFIG:Release>:/O2 /Oi>)
+    add_compile_options($<$<CONFIG:Release>:/O2>)
+    add_compile_options($<$<CONFIG:Release>:/Oi>)
 else()
     add_compile_options(-Wall -Wextra -Wpedantic)
-    add_compile_options($<$<CONFIG:Release>:-O3 -march=native>)
+    add_compile_options($<$<CONFIG:Release>:-O3>)
+    add_compile_options($<$<CONFIG:Release>:-march=native>)
 endif()
 
 # ---------- Dependencies ----------

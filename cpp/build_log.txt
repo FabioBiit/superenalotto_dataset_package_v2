@@ -1,0 +1,5 @@
+﻿[1/5] Building CXX object src\CMakeFiles\se_engine.dir\Release\backtesting\walk_forward.cpp.obj
+[2/5] Linking CXX static library lib\Release\se_engine_core.lib
+[3/5] Linking CXX executable bin\Release\se_cli.exe
+[4/5] Linking CXX executable bin\Release\se_tests.exe
+[5/5] Linking CXX shared module lib\Release\se_engine.cp311-win_amd64.pyd

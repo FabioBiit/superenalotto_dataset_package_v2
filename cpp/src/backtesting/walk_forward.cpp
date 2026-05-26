@@ -144,7 +144,9 @@ Eigen::MatrixXd WalkForward::qmat_G4(const se::core::DrawSet& draws) const {
         if (last_refit < 0 || (t - last_refit) >= cfg_.refit_every) {
             const Eigen::ArrayXd p_emp = (counts + 1.0) / (counts.sum() + N_MAX);
             const Eigen::ArrayXd logit_emp = (p_emp / (1.0 - p_emp)).log();
-            beta = X.householderQr().solve(logit_emp.matrix());
+            // Rank-revealing solver (X has redundant columns: decade/parity/fascia
+            // sum-to-one constraints + intercept = 3 redundancies).
+            beta = X.completeOrthogonalDecomposition().solve(logit_emp.matrix());
             last_refit = t;
         }
         const Eigen::ArrayXd logit_pred = (X * beta).array();

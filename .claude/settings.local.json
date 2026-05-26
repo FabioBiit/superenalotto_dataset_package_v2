@@ -25,7 +25,12 @@
       "PowerShell(Remove-Item *)",
       "PowerShell(Tee-Object *)",
       "PowerShell(New-Item *)",
-      "PowerShell($ErrorActionPreference = \"Continue\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" -m pip install pybind11 2>&1 | Select-Object -Last 3; Write-Host \"\"; Write-Host \"=== Verify ===\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" -c \"import pybind11; print\\('pybind11', pybind11.__version__, 'at', pybind11.get_cmake_dir\\(\\)\\)\")"
+      "PowerShell($ErrorActionPreference = \"Continue\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" -m pip install pybind11 2>&1 | Select-Object -Last 3; Write-Host \"\"; Write-Host \"=== Verify ===\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" -c \"import pybind11; print\\('pybind11', pybind11.__version__, 'at', pybind11.get_cmake_dir\\(\\)\\)\")",
+      "Bash(rtk grep *)",
+      "PowerShell(cd \"C:\\\\Users\\\\kyros\\\\OneDrive\\\\Desktop\\\\superenalotto_dataset_package_v2\\\\superenalotto_dataset_package_v2\\\\cpp\"; if \\(Test-Path build_log.txt\\) { Write-Host \"=== Build log tail ===\"; Get-Content build_log.txt -Encoding UTF8 -Tail 5; Write-Host \"=== Has build progressed past Catch2? ===\"; \\(Get-Content build_log.txt -Encoding UTF8 | Select-String \"Catch2.lib\"\\).Count; Write-Host \"se_cli compile? \"; \\(Get-Content build_log.txt -Encoding UTF8 | Select-String \"se_cli\"\\).Count } else { Write-Host \"No log yet\"; ls build/cpu/ 2>$null })",
+      "PowerShell(cd \"C:\\\\Users\\\\kyros\\\\OneDrive\\\\Desktop\\\\superenalotto_dataset_package_v2\\\\superenalotto_dataset_package_v2\"; $exe = \"cpp\\\\build\\\\cpu\\\\bin\\\\Release\\\\se_cli.exe\"; $csv = \"data\\\\superenalotto_full_history_validated.csv\"; Write-Host \"=== VALIDATE ===\" -ForegroundColor Cyan; & $exe --validate $csv; Write-Host \"\"; Write-Host \"=== FREQUENCY ===\" -ForegroundColor Cyan; & $exe --frequency $csv; Write-Host \"\"; Write-Host \"=== FINGERPRINT ===\" -ForegroundColor Cyan; & $exe --fingerprint $csv)",
+      "PowerShell(cd \"C:\\\\Users\\\\kyros\\\\OneDrive\\\\Desktop\\\\superenalotto_dataset_package_v2\\\\superenalotto_dataset_package_v2\"; $exe = \"cpp\\\\build\\\\cpu\\\\bin\\\\Release\\\\se_cli.exe\"; $csv = \"data\\\\superenalotto_full_history_validated.csv\"; Write-Host \"=== GENERATE 25 ===\" -ForegroundColor Cyan; & $exe --generate $csv 25; Write-Host \"\"; Write-Host \"=== BACKTEST \\(initial_train=800\\) ===\" -ForegroundColor Cyan; & $exe --backtest $csv 800)",
+      "Bash(grep -E \"\\\\.\\(exe|pyd|lib\\)$\")"
     ]
   }
 }

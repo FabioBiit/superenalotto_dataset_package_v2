@@ -12,6 +12,9 @@ add_library(se_engine STATIC
     ${SE_BACKTESTING_SRC}
 )
 
+# Output as se_engine_core.lib so it doesn't conflict with the .pyd's import lib.
+set_target_properties(se_engine PROPERTIES OUTPUT_NAME "se_engine_core")
+
 target_include_directories(se_engine PUBLIC
     ${CMAKE_SOURCE_DIR}/include
 )
