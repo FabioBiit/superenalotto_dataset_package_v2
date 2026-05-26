@@ -9,13 +9,30 @@ ENV/
 .idea/
 .vs/
 
-# CodeReviewGraph
-.code-review-graph/
-.crg/
-*.sqlite
-*.sqlite3
-*.db
-
 # Python cache
 __pycache__/
 *.pyc
+
+# cpp cache
+cpp/deps/
+
+# CodeReviewGraph local cache/index
+.code-review-graph/
+.codegraph/
+.code-review/
+.reviewgraph/
+.gemini/
+.github/
+.kiro/
+.qoder/
+.claude/
+
+# CodeReviewGraph database/cache files
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+
+# MCP / local tool cache
+.mcp/

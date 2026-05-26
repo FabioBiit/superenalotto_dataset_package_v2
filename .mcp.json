@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "code-review-graph": {
+      "command": "uvx",
+      "args": [
+        "code-review-graph",
+        "serve"
+      ],
+      "cwd": "C:\\Users\\kyros\\OneDrive\\Desktop\\superenalotto_dataset_package_v2\\superenalotto_dataset_package_v2",
+      "type": "stdio"
+    }
+  }
+}

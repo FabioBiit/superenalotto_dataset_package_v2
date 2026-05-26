@@ -23,7 +23,9 @@
       "Bash(\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/Installer/vswhere.exe\" -latest -products '*' -requires Microsoft.VisualCpp.Tools.HostX64.TargetX64 -property installationPath -property displayName)",
       "Bash(rtk read *)",
       "PowerShell(Remove-Item *)",
-      "PowerShell(Tee-Object *)"
+      "PowerShell(Tee-Object *)",
+      "PowerShell(New-Item *)",
+      "PowerShell($ErrorActionPreference = \"Continue\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" -m pip install pybind11 2>&1 | Select-Object -Last 3; Write-Host \"\"; Write-Host \"=== Verify ===\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" -c \"import pybind11; print\\('pybind11', pybind11.__version__, 'at', pybind11.get_cmake_dir\\(\\)\\)\")"
     ]
   }
 }
