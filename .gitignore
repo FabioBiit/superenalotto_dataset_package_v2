@@ -12,6 +12,7 @@ ENV/
 # Python cache
 __pycache__/
 *.pyc
+inference/
 
 # cpp cache
 cpp/deps/

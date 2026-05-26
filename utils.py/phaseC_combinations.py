@@ -36,12 +36,12 @@ RNG = np.random.default_rng(42)
 
 # ---------------- CONFIG ----------------
 BASE = Path(r"C:\Users\kyros\OneDrive\Desktop\superenalotto_dataset_package_v2\superenalotto_dataset_package_v2")
-CSV = BASE / "data" / "superenalotto_5.5_anni_extraction.csv"
+CSV = BASE / "data" / "superenalotto_full_history_validated.csv"   # 2855 draws (2009-2026)
 OUT = BASE / "inference"
 OUT.mkdir(exist_ok=True)
 
-N_TARGET = 25            # final portfolio size
-N_CANDIDATES_PER_STRAT = 8
+N_TARGET = 100           # final portfolio size
+N_CANDIDATES_PER_STRAT = 20   # 20 * 6 strategies = 120 candidates (margin for dedup/quality filter)
 MMR_LAMBDA = 0.65        # balance score vs diversity
 
 WARNING_TEXT = (
@@ -53,7 +53,7 @@ WARNING_TEXT = (
 
 # ---------------- LOAD ----------------
 COLS = ["date", "contest_number", "n1", "n2", "n3", "n4", "n5", "n6", "jolly", "superstar"]
-df = pd.read_csv(CSV, header=0, names=COLS)
+df = pd.read_csv(CSV, usecols=COLS)   # usecols handles the validated CSV's extra columns
 df["date"] = pd.to_datetime(df["date"])
 df = df.sort_values(["date", "contest_number"]).reset_index(drop=True)
 MAIN = ["n1", "n2", "n3", "n4", "n5", "n6"]
