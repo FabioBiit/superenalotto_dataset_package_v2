@@ -34,7 +34,22 @@
       "PowerShell(cd \"C:\\\\Users\\\\kyros\\\\OneDrive\\\\Desktop\\\\superenalotto_dataset_package_v2\\\\superenalotto_dataset_package_v2\"; $env:PYTHONIOENCODING=\"utf-8\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" utils.py\\\\generate_100_via_cpp.py)",
       "Bash(cp phaseC_combinations.csv phaseC_combinations_archive_1133draws_25combos.csv)",
       "Bash(cp phaseC_summary.json phaseC_summary_archive_1133draws_25combos.json)",
-      "PowerShell(cd \"C:\\\\Users\\\\kyros\\\\OneDrive\\\\Desktop\\\\superenalotto_dataset_package_v2\\\\superenalotto_dataset_package_v2\"; $env:PYTHONIOENCODING=\"utf-8\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" utils.py\\\\phaseC_combinations.py 2>&1 | Select-Object -Last 35)"
+      "PowerShell(cd \"C:\\\\Users\\\\kyros\\\\OneDrive\\\\Desktop\\\\superenalotto_dataset_package_v2\\\\superenalotto_dataset_package_v2\"; $env:PYTHONIOENCODING=\"utf-8\"; & \"C:\\\\Users\\\\kyros\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" utils.py\\\\phaseC_combinations.py 2>&1 | Select-Object -Last 35)",
+      "mcp__code-review-graph__get_architecture_overview_tool",
+      "mcp__code-review-graph__list_graph_stats_tool",
+      "mcp__code-review-graph__list_communities_tool",
+      "mcp__code-review-graph__list_flows_tool",
+      "mcp__code-review-graph__semantic_search_nodes_tool",
+      "mcp__code-review-graph__query_graph_tool",
+      "PowerShell($py = \".\\\\.venv\\\\Scripts\\\\python.exe\"; if \\(-not \\(Test-Path $py\\)\\) { $py = \"python\" }; & $py --version; & $py \".\\\\utils.py\\\\wallenius_urn.py\" --no-power --n-sim 300)",
+      "PowerShell($cands = @\\(\"python\",\"py\",\"python3\"\\); foreach \\($c in $cands\\) { try { $v = & $c -c \"import sys,numpy,scipy,pandas; print\\(sys.executable, '| numpy', numpy.__version__, '| scipy', scipy.__version__, '| pandas', pandas.__version__\\)\" 2>$null; if \\($?\\) { Write-Output \"OK [$c] -> $v\" } else { Write-Output \"NO [$c] \\(manca un pacchetto\\)\" } } catch { Write-Output \"NO [$c] \\(non trovato\\)\" } })",
+      "PowerShell(& \".\\\\.venv\\\\Scripts\\\\python.exe\" -m pip install --disable-pip-version-check numpy scipy pandas 2>&1 | Select-Object -Last 15)",
+      "PowerShell(& \".\\\\.venv\\\\Scripts\\\\python.exe\" \".\\\\utils.py\\\\wallenius_urn.py\" --no-power --n-sim 300)",
+      "PowerShell($sw = [System.Diagnostics.Stopwatch]::StartNew\\(\\); & \".\\\\.venv\\\\Scripts\\\\python.exe\" \".\\\\utils.py\\\\wallenius_urn.py\" --n-sim 2000 --n-rep 400; $sw.Stop\\(\\); Write-Output \\(\"`n[tempo] {0:N1}s\" -f $sw.Elapsed.TotalSeconds\\))"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "code-review-graph"
+  ]
 }
